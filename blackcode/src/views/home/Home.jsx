@@ -7,15 +7,28 @@ import {
 import { FaXTwitter } from "react-icons/fa6";
 import styles from "./Home.module.css";
 import backgroundVideo from "../../assets/temporary-background.mp4";
+import { useEffect, useRef } from "react";
 
 export const Home = () => {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.load();
+      videoRef.current.play().catch((error) => {
+        console.error("Error attempting to play video:", error);
+      });
+    }
+  }, []);
+
   return (
     <div className={styles.container}>
       <video
+        ref={videoRef}
         src={backgroundVideo}
-        autoPlay
         loop
         muted
+        playsInline
         className={styles.backgroundVideo}
       ></video>
       <div className={styles["title-container"]}>
