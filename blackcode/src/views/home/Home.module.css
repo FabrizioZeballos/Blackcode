@@ -1,11 +1,11 @@
 :root {
   --primary-color: #fff;
   --secondary-color: #494949;
-  --title-font-size: 55px;
+  --title-font-size: 46px;
   --title-font-size-lg: 100px;
-  --email-font-size: 17px;
+  --email-font-size: 14px;
   --email-font-size-lg: 15px;
-  --icon-font-size: 24px;
+  --icon-font-size: 20px;
   --icon-font-size-sm: 20px;
   --transition-duration: 0.2s;
 }
@@ -28,7 +28,7 @@
   font-size: var(--title-font-size);
   color: var(--primary-color);
   margin: 0 0 16px 0;
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.06rem;
 }
 
 .email {
@@ -77,11 +77,6 @@
   z-index: -1;
 }
 
-/* @media (min-width: 768px) {
-  .title {
-  }
-} */
-
 @media (min-width: 1200px) and (max-width: 1439px) {
   .title {
     font-size: var(--title-font-size-lg);
@@ -98,6 +93,14 @@
 
 @media (min-width: 1440px) {
   .title {
-    color: red;
+    font-size: var(--title-font-size-lg);
+  }
+
+  .email {
+    font-size: var(--email-font-size-lg);
+  }
+
+  .icons {
+    font-size: var(--icon-font-size-sm);
   }
 }
