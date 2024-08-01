@@ -2,11 +2,11 @@
   --primary-color: #fff;
   --secondary-color: #494949;
   --title-font-size: 55px;
-  --title-font-size-lg: 180px;
+  --title-font-size-lg: 100px;
   --email-font-size: 17px;
-  --email-font-size-lg: 25px;
+  --email-font-size-lg: 15px;
   --icon-font-size: 24px;
-  --icon-font-size-lg: 28px;
+  --icon-font-size-sm: 20px;
   --transition-duration: 0.2s;
 }
 
@@ -27,7 +27,7 @@
   font-weight: 700;
   font-size: var(--title-font-size);
   color: var(--primary-color);
-  margin: 0 0 10px 0;
+  margin: 0 0 16px 0;
   letter-spacing: 0.1rem;
 }
 
@@ -46,7 +46,7 @@
 }
 
 .icons {
-  width: 240px;
+  width: 200px;
   display: flex;
   justify-content: space-between;
   position: absolute;
@@ -77,17 +77,27 @@
   z-index: -1;
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   .title {
-    font-size: 180px;
-    margin: 0;
+  }
+} */
+
+@media (min-width: 1200px) and (max-width: 1439px) {
+  .title {
+    font-size: var(--title-font-size-lg);
   }
 
   .email {
-    font-size: 25px;
+    font-size: var(--email-font-size-lg);
   }
 
   .icons {
-    font-size: var(--icon-font-size-lg);
+    font-size: var(--icon-font-size-sm);
+  }
+}
+
+@media (min-width: 1440px) {
+  .title {
+    color: red;
   }
 }
