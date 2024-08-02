@@ -12,15 +12,6 @@ import { useEffect, useRef } from "react";
 export const Home = () => {
   const videoRef = useRef(null);
 
-  /* useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.load();
-      videoRef.current.play().catch((error) => {
-        console.error("Error attempting to play video:", error);
-      });
-    }
-  }, []); */
-
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.load();
