@@ -12,28 +12,34 @@ import { useEffect, useRef } from "react";
 export const Home = () => {
   const videoRef = useRef(null);
 
-  useEffect(() => {
-    const setVH = () => {
-      let vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty("--vh", `${vh}px`);
-    };
-
-    setVH();
-    window.addEventListener("resize", setVH);
-    window.addEventListener("orientationchange", setVH);
-
-    return () => {
-      window.removeEventListener("resize", setVH);
-      window.removeEventListener("orientationchange", setVH);
-    };
-  }, []);
-
-  useEffect(() => {
+  /* useEffect(() => {
     if (videoRef.current) {
       videoRef.current.load();
       videoRef.current.play().catch((error) => {
         console.error("Error attempting to play video:", error);
       });
+    }
+  }, []); */
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.load();
+
+      const playVideo = () => {
+        videoRef.current.play().catch((error) => {
+          console.error("Error attempting to play video:", error);
+        });
+      };
+
+      videoRef.current.addEventListener("canplaythrough", playVideo, {
+        once: true,
+      });
+
+      return () => {
+        if (videoRef.current) {
+          videoRef.current.removeEventListener("canplaythrough", playVideo);
+        }
+      };
     }
   }, []);
 
@@ -45,6 +51,7 @@ export const Home = () => {
         loop
         muted
         playsInline
+        preload="auto"
         className={styles.backgroundVideo}
       ></video>
       <div className={styles["title-container"]}>
