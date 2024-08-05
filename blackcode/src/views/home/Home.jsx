@@ -53,35 +53,35 @@ export const Home = () => {
       </div>
       <div className={styles.icons}>
         <a
-          href="https://www.linkedin.com/in/yourprofile"
+          /* href="https://www.linkedin.com/in/yourprofile" */
           target="_blank"
           rel="noopener noreferrer"
         >
           <FaLinkedin className={styles.icon} />
         </a>
         <a
-          href="https://twitter.com/yourprofile"
+          /* href="https://twitter.com/yourprofile" */
           target="_blank"
           rel="noopener noreferrer"
         >
           <FaXTwitter className={styles.icon} />
         </a>
         <a
-          href="https://www.instagram.com/yourprofile"
+          /*  href="https://www.instagram.com/yourprofile" */
           target="_blank"
           rel="noopener noreferrer"
         >
           <FaInstagram className={styles.icon} />
         </a>
         <a
-          href="https://www.facebook.com/yourprofile"
+          /* href="https://www.facebook.com/yourprofile" */
           target="_blank"
           rel="noopener noreferrer"
         >
           <FaFacebook className={styles.icon} />
         </a>
         <a
-          href="https://wa.me/yourphonenumber"
+          /* href="https://wa.me/yourphonenumber" */
           target="_blank"
           rel="noopener noreferrer"
         >
