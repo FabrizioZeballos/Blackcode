@@ -5,7 +5,7 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   // This makes the server listen on all IP addresses. Useful to access website on phone web browser
-  /* server: {
+  server: {
     host: true,
-  }, */
+  },
 });
